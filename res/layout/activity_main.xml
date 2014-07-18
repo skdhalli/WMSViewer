@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,7 +9,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.wmsviewer.MainActivity" >
 
-	<RelativeLayout
+	<RelativeLayout android:id="@+id/url_section"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:orientation="horizontal" >
@@ -37,25 +37,33 @@
 		    android:layout_alignParentRight="true"
 		    />
 	</RelativeLayout>
-<!--  <ImageView 
-    android:id="@+id/img_view"
-     
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"/> -->
+  	<ImageView 
+    	android:id="@+id/img_view"
+		android:src="@drawable/ic_launcher"
+		android:background="@android:color/black"
+   	  	android:layout_below="@+id/url_section"
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"/> 
 
  <LinearLayout
+     	android:layout_alignParentBottom="true"
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 	    android:orientation="horizontal" >
 		
 <Button android:id="@+id/zoomin" android:layout_width="wrap_content"
      android:layout_height="wrap_content" android:text="@string/zoom_in"/>
-<!-- <Button android:id="@+id/zoomout" android:text="@string/zoom_out"/>     -->
-<!-- <Button android:id="@+id/panleft" android:text="@string/pan_left"/> -->
-<!-- <Button android:id="@+id/panup" android:text="@string/pan_top"/>     -->
-<!-- <Button android:id="@+id/panright" android:text="@string/pan_right"/> -->
-<!-- <Button android:id="@+id/pandown" android:text="@string/pan_down"/>     -->
+ <Button android:id="@+id/zoomout" android:text="@string/zoom_out"
+      android:layout_height="wrap_content" android:layout_width="wrap_content"/>  
+ <Button android:id="@+id/panleft" android:text="@string/pan_left"
+     	android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+<Button android:id="@+id/panup" android:text="@string/pan_top"
+     android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+<Button android:id="@+id/panright" android:text="@string/pan_right"
+     android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+<Button android:id="@+id/pandown" android:text="@string/pan_down"
+     android:layout_height="wrap_content" android:layout_width="wrap_content"/>
 
 </LinearLayout> 
 
-</LinearLayout>
+</RelativeLayout>
