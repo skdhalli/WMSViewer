@@ -2,14 +2,26 @@
 <resources>
 
     <string name="app_name">WMS viewer</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-	<string name="wms_url">WMS url: </string>
-	<string name="go_button">Go</string>
 	<string name="zoom_in">-</string>
 	<string name="zoom_out">+</string>
 	<string name="pan_left">(</string>
 	<string name="pan_top">^</string>
 	<string name="pan_right">)</string>
 	<string name="pan_down">v</string>
+	
+	<!-- WMS Properties start -->
+	<string name="WMS_URL">http://107.170.250.179:8080/geoserver/parks/wms</string>
+	<string name="Layers">yellowstone</string>
+	<string name="Styles"></string>
+	<string name="Format">image/png</string>
+	<string name="Service">WMS</string>
+	<string name="Version">1.1.1</string>
+	<string name="Request">GetMap</string>
+	<string name="SRS">EPSG:3857</string>
+	<string name="BBOX">-12487789.863096,5348757.3548969,-11989415.86151,5713777.3755893</string>
+	<string name="Width">512</string>
+	<string name="Height">375</string>
+	<!-- WMS Properties end -->
+	
 </resources>

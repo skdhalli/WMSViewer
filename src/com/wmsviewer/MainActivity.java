@@ -4,15 +4,33 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 
 
 public class MainActivity extends ActionBarActivity {
 
+	WMSImageGenerator wms_service = null;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //git test
+        ImageView img = (ImageView)findViewById(R.id.img_view);
+        
+        
+        wms_service = new WMSImageGenerator(img);
+        String WMS_URL= getString(R.string.WMS_URL);
+		String Layers = getString(R.string.Layers);
+		String Styles = getString(R.string.Styles);
+        String Format = getString(R.string.Format);
+        String Service= getString(R.string.Service);
+        String Version= getString(R.string.Version);
+        String Request = getString(R.string.Request);
+        String SRS =getString(R.string.SRS);
+        String BBOX = getString(R.string.BBOX);
+        String Width = getString(R.string.Width);
+        String Height = getString(R.string.Height);
+        wms_service.execute(WMS_URL, Layers, Styles, Format, Service, Version, Request, SRS, BBOX, Width, Height);
     }
 
 

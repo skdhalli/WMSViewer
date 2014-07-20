@@ -9,40 +9,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.wmsviewer.MainActivity" >
 
-	<RelativeLayout android:id="@+id/url_section"
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content"
-	    android:orientation="horizontal" >
 	
-	    <TextView 
-	        android:id="@+id/wms_url_txt"
-	        android:text="@string/wms_url" 
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentLeft="true"
-	        />
-		<EditText 
-		    android:id="@+id/wms_url"
-		    android:inputType="textUri"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    android:layout_toLeftOf="@+id/go_wms"
-		    android:layout_toRightOf="@+id/wms_url_txt"
-		    />
-		<Button 
-		    android:id="@+id/go_wms"
-		    android:text="@string/go_button" 
-		    android:layout_width="wrap_content" 
-		    android:layout_height="wrap_content" 
-		    android:layout_alignParentRight="true"
-		    />
-	</RelativeLayout>
   	<ImageView 
     	android:id="@+id/img_view"
-		android:src="@drawable/ic_launcher"
-		android:background="@android:color/black"
-   	  	android:layout_below="@+id/url_section"
-    	android:layout_width="fill_parent"
+		android:layout_width="fill_parent"
     	android:layout_height="fill_parent"/> 
 
  <LinearLayout
