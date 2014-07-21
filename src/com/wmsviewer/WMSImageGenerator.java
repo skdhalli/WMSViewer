@@ -10,7 +10,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ImageView;
 
-public class WMSImageGenerator extends AsyncTask<String, Void, Bitmap> {
+public class WMSImageGenerator extends  AsyncTask<WMSRequestInfo, Void, Bitmap> {
 
 	public WMSImageGenerator(ImageView _img_view)
 	{
@@ -19,44 +19,34 @@ public class WMSImageGenerator extends AsyncTask<String, Void, Bitmap> {
 	}
 	private String debug_tag = "WMS Image retrieval";
 	private ImageView img_view;
-	
-	/*private String WMS_URL;
-	public String getWMS_URL()
-	{
-		return WMS_URL;
-	}
-	public void setWMS_URL(String value)
-	{
-		WMS_URL = value;
-	}*/
-	
+	public boolean isBusy = false;
 	
 	@Override
-	protected Bitmap doInBackground(String... params) {
+	protected Bitmap doInBackground(WMSRequestInfo... params) {
 		try {
 			String final_url = "";
 			//wms layer properties
-			String WMS_URL= params[0];
-			String Layers = "Layers="+params[1];
-			String Styles = "Styles="+params[2];
-	        String Format = "Format="+params[3];
-	        String Service= "Service="+params[4];
-	        String Version= "Version="+params[5];
-	        String Request = "Request="+params[6];
-	        String SRS ="SRS="+params[7];
-	        String BBOX = "BBOX="+params[8];
-	        String Width = "Width="+params[9];
-	        String Height = "Height="+params[10];
+			WMSRequestInfo input = params[0];
+			String WMS_URL= input.WMS_URL;
+			String Layers = "Layers="+input.Layers;
+			String Styles = "Styles="+input.Styles;
+	        String Format = "Format="+input.Format;
+	        String Service= "Service="+input.Service;
+	        String Version= "Version="+input.Version;
+	        String Request = "Request="+input.Request;
+	        String SRS ="SRS="+input.SRS;
+	        String BBOX = "BBOX="+input.BBOX;
+	        String Width = "Width="+input.Width;
+	        String Height = "Height="+input.Height;
 	        
 	        final_url= WMS_URL + "?"+Layers+"&"+Styles+"&"+Format+"&"+Service+"&"+Version+"&"+Request+"&"+SRS+"&"+BBOX+"&"+Width+"&"+Height;
-			Log.d(debug_tag, final_url);
-	        java.net.URL url = new java.net.URL(final_url);
+			java.net.URL url = new java.net.URL(final_url);
 	        HttpURLConnection connection = (HttpURLConnection) url
 	                .openConnection();
 	        connection.setDoInput(true);
 	        connection.connect();
-	        InputStream input = connection.getInputStream();
-	        Bitmap myBitmap = BitmapFactory.decodeStream(input);
+	        InputStream input_s = connection.getInputStream();
+	        Bitmap myBitmap = BitmapFactory.decodeStream(input_s);
 	        return myBitmap;
 	    } catch (IOException e) {
 	        Log.e(debug_tag, e.toString());
@@ -66,7 +56,8 @@ public class WMSImageGenerator extends AsyncTask<String, Void, Bitmap> {
 	
 	@Override
     protected void onPostExecute(Bitmap result) {
-        this.img_view.setImageBitmap(result);
+		this.img_view.setImageBitmap(result);
+		isBusy = false;
     }
 
     @Override
@@ -74,4 +65,6 @@ public class WMSImageGenerator extends AsyncTask<String, Void, Bitmap> {
 
     @Override
     protected void onProgressUpdate(Void... values) {}
+    
+ 
 }

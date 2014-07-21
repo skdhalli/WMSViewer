@@ -3,12 +3,12 @@
 
     <string name="app_name">WMS viewer</string>
     <string name="action_settings">Settings</string>
-	<string name="zoom_in">-</string>
+	<!-- <string name="zoom_in">-</string>
 	<string name="zoom_out">+</string>
 	<string name="pan_left">(</string>
 	<string name="pan_top">^</string>
 	<string name="pan_right">)</string>
-	<string name="pan_down">v</string>
+	<string name="pan_down">v</string> -->
 	
 	<!-- WMS Properties start -->
 	<string name="WMS_URL">http://107.170.250.179:8080/geoserver/parks/wms</string>

@@ -12,27 +12,57 @@
 	
   	<ImageView 
     	android:id="@+id/img_view"
-		android:layout_width="fill_parent"
+    	android:layout_width="fill_parent"
     	android:layout_height="fill_parent"/> 
 
  <LinearLayout
      	android:layout_alignParentBottom="true"
 	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
+	    android:layout_height="50dp"
 	    android:orientation="horizontal" >
 		
-<Button android:id="@+id/zoomin" android:layout_width="wrap_content"
-     android:layout_height="wrap_content" android:text="@string/zoom_in"/>
- <Button android:id="@+id/zoomout" android:text="@string/zoom_out"
-      android:layout_height="wrap_content" android:layout_width="wrap_content"/>  
- <Button android:id="@+id/panleft" android:text="@string/pan_left"
-     	android:layout_height="wrap_content" android:layout_width="wrap_content"/>
-<Button android:id="@+id/panup" android:text="@string/pan_top"
-     android:layout_height="wrap_content" android:layout_width="wrap_content"/>
-<Button android:id="@+id/panright" android:text="@string/pan_right"
-     android:layout_height="wrap_content" android:layout_width="wrap_content"/>
-<Button android:id="@+id/pandown" android:text="@string/pan_down"
-     android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+<ImageButton android:id="@+id/zoomin" 
+    android:src="@drawable/zoom_plus_mini"
+    android:tag="zoomin"
+     android:layout_height="fill_parent"
+     android:layout_width="fill_parent"
+     android:scaleType="fitXY"
+     android:layout_weight="1"/>
+ <ImageButton android:id="@+id/zoomout"
+     android:src="@drawable/zoom_minus_mini"
+     android:tag="zoomout"
+      android:layout_height="fill_parent"
+     android:layout_width="fill_parent"
+     android:scaleType="fitXY"
+     android:layout_weight="1"/>  
+ <ImageButton android:id="@+id/panleft"
+     android:src="@drawable/west_mini"
+     android:tag="left"
+     	android:layout_height="fill_parent"
+     android:layout_width="fill_parent"
+     android:scaleType="fitXY"
+     android:layout_weight="1"/>
+<ImageButton android:id="@+id/panup"
+    android:src="@drawable/north_mini"
+    android:tag="up"
+     android:layout_height="fill_parent"
+     android:layout_width="fill_parent"
+     android:scaleType="fitXY"
+     android:layout_weight="1"/>
+<ImageButton android:id="@+id/panright"
+    android:src="@drawable/east_mini"
+    android:tag="right"
+     android:layout_height="fill_parent"
+     android:layout_width="fill_parent"
+     android:scaleType="fitXY"
+     android:layout_weight="1"/>
+<ImageButton android:id="@+id/pandown"
+    android:src="@drawable/south_mini"
+    android:tag="down"
+     android:layout_height="fill_parent"
+     android:layout_width="fill_parent"
+     android:scaleType="fitXY"
+     android:layout_weight="1"/>
 
 </LinearLayout> 
 
